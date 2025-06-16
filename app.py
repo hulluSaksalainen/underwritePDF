@@ -68,4 +68,11 @@ def index():
     return render_template("index.html")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = os.environ.get("PORT")
+
+    if port:
+        # Auf Render oder anderem Host mit gesetztem PORT
+        app.run(host="0.0.0.0", port=int(port))
+    else:
+        # Lokaler Start (z. B. VS Code, Terminal etc.)
+        app.run(debug=True)
