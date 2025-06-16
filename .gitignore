@@ -1,0 +1,4 @@
+.env
+*.odt
+*.pbix
+test.py

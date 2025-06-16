@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>PDF Signatur</title>
+</head>
+<body>
+  <h2>PDF mit Signatur versehen</h2>
+  <form action="/" method="POST" enctype="multipart/form-data">
+    <label>PDF hochladen:</label><br>
+    <input type="file" name="pdf" required><br><br>
+
+    <label>Unterschrift (Bild):</label><br>
+    <input type="file" name="image" required><br><br>
+
+    <label>Ort:</label>
+    <input type="text" name="ort" required>
+
+    <label>Datum:</label>
+    <input type="text" name="datum" value="{{ now }}" required><br><br>
+
+    <label>Abstand links (px):</label>
+    <input type="number" name="margin_left" value="50"><br>
+
+    <label>Abstand rechts (px):</label>
+    <input type="number" name="margin_right" value="50"><br>
+
+    <label>Abstand unten (px):</label>
+    <input type="number" name="margin_bottom" value="50"><br><br>
+
+    <label>Layout:</label>
+    <select name="layout">
+      <option value="portrait">Hochformat</option>
+      <option value="landscape">Querformat</option>
+    </select><br><br>
+
+    <button type="submit">PDF erstellen</button>
+  </form>
+</body>
+</html>
