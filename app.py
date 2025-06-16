@@ -1,7 +1,8 @@
+""" für tonys unterschriften"""
+import os
 from flask import Flask, request, render_template, send_file
 import fitz  # PyMuPDF
-import os
-from datetime import datetime
+# from datetime import datetime
 
 app = Flask(__name__)
 UPLOAD_FOLDER = "uploads"
@@ -10,6 +11,7 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 @app.route("/", methods=["GET", "POST"])
 def index():
+    """ hol sich halt alle daten"""
     if request.method == "POST":
         # Eingaben holen
         ort = request.form["ort"]

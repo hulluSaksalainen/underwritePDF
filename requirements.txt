@@ -7,4 +7,5 @@ sqlalchemy
 dotenv
 flask_compress
 flask-compress
-flask PyMuPDF
+flask
+PyMuPDF
